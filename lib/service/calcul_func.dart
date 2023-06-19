@@ -3,16 +3,16 @@ import 'dart:math';
 
 class CalculFunc {
   CalculFunc({required this.height, required this.weight});
-
+  
   final int height;
   final int weight;
 
   late double _corpulance;
 
+
   String calculateCorp() {
-    double corpulance = weight / pow(height / 100, 2);
-    //pour une chiffre apres virgule
-    return corpulance.toStringAsFixed(1);
+    _corpulance = weight / pow(height / 100, 2);
+    return _corpulance.toStringAsFixed(1);
   }
 
   String getResult() {

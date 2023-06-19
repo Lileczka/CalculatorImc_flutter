@@ -1,6 +1,5 @@
 
 import 'package:calcul_flutter/pages/result.dart';
-import 'package:calcul_flutter/service/calcul_func.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/home_page.dart';
@@ -21,6 +20,7 @@ class CalculatorPage extends StatelessWidget {
      initialRoute:'/',
      routes: {
       '/': (context)=> const HomePage(),
+      // ignore: prefer_const_constructors
       '/second': (context)=> ResultPage(),
      }
     );

@@ -7,9 +7,10 @@ import '../compo_elements/repeted_card.dart';
 class ResultPage extends StatelessWidget {
   const ResultPage(
       {Key? key,
-      required this.corpulenceResult,
-      required this.resultText,
-      required this.interpretation})
+   this.corpulenceResult = '',
+     this.resultText= '',
+    this.interpretation = '',
+    })
       : super(key: key);
 
   //créer une proprieter pour passer data de la page home
