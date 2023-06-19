@@ -5,20 +5,23 @@ import '../const.dart';
 
 
 class BottomWidget extends StatelessWidget {
-  BottomWidget({required this.onTap, required this.buttoTitle});
+ const  BottomWidget({
+   Key? key, 
+   required this.onTap, 
+   required this.buttoTitle}): super(key: key);
 
-  final VoidCallback? onTap;
+  final VoidCallback onTap;
   final String buttoTitle;
 
   @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        child: Center(
-          child: Text(
-            buttoTitle,
-            style: kLargeBottom,
+Widget build(BuildContext context) {
+  return GestureDetector(
+    onTap: onTap,
+    child: Container(
+      child: Center(
+        child: Text(
+          buttoTitle,
+          style: kLargeBottom,
           ),
         ),
         color: kBottomColor,

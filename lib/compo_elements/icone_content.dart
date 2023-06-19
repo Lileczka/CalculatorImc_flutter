@@ -6,7 +6,7 @@ import '../const.dart';
 
 class CustomIconWidget extends StatelessWidget {
   //creer custom constructeur
-  CustomIconWidget({required this.iconData, required this.label, Key? key})
+  const CustomIconWidget({required this.iconData, required this.label, Key? key})
       : super(key: key);
 
   //creer proprieté
@@ -15,7 +15,7 @@ class CustomIconWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return  Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Icon(

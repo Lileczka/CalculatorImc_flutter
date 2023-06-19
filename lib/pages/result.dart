@@ -1,13 +1,22 @@
-
 import 'package:flutter/material.dart';
 
 import '../compo_elements/button_widget.dart';
 import '../const.dart';
 import '../compo_elements/repeted_card.dart';
 
-
-
 class ResultPage extends StatelessWidget {
+  const ResultPage(
+      {Key? key,
+      required this.corpulenceResult,
+      required this.resultText,
+      required this.interpretation})
+      : super(key: key);
+
+  //créer une proprieter pour passer data de la page home
+  final String corpulenceResult;
+  final String resultText;
+  final String interpretation;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,12 +29,12 @@ class ResultPage extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Container(
-                padding: EdgeInsets.all(35.0),
+                padding: const EdgeInsets.all(35.0),
                 alignment: Alignment.bottomLeft,
                 child: const Text('RESULTAT', style: kTextCentreWidget),
               ),
             ),
-            const Expanded(
+            Expanded(
               flex: 4,
               child: RepetedCard(
                 kolor: kActivColor,
@@ -34,15 +43,15 @@ class ResultPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      'CORPULENCE',
+                      resultText,
                       style: kResultText,
                     ),
                     Text(
-                      '18.3',
+                      corpulenceResult,
                       style: kCorpulence,
                     ),
                     Text(
-                      'you should eat more',
+                      interpretation,
                       textAlign: TextAlign.center,
                       style: kLabelTextStyle,
                     ),

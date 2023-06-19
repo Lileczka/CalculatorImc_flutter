@@ -1,5 +1,6 @@
 
 import 'package:calcul_flutter/pages/result.dart';
+import 'package:calcul_flutter/service/calcul_func.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/home_page.dart';
@@ -13,6 +14,7 @@ class CalculatorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),

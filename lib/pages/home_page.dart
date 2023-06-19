@@ -5,7 +5,7 @@ import '../compo_elements/button_round.dart';
 import '../compo_elements/icone_content.dart';
 import '../const.dart';
 import '../compo_elements/repeted_card.dart';
-
+import '../service/calcul_func.dart';
 
 //créer enum
 enum Gender { male, female }
@@ -18,6 +18,7 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+  
   Gender? selectedGender;
   int height = 180;
   int weight = 60;
@@ -77,8 +78,8 @@ class HomePageState extends State<HomePage> {
                       kolor: selectedGender == Gender.male
                           ? kActivColor
                           : kInactiveColor,
-                      cardChild: CustomIconWidget(
-                       iconData: FontAwesomeIcons.mars,
+                      cardChild: const CustomIconWidget(
+                        iconData: FontAwesomeIcons.mars,
                         label: 'MALE',
                       ),
                     ),
@@ -93,7 +94,7 @@ class HomePageState extends State<HomePage> {
                       kolor: selectedGender == Gender.female
                           ? kActivColor
                           : kInactiveColor,
-                      cardChild: CustomIconWidget(
+                      cardChild: const CustomIconWidget(
                         iconData: FontAwesomeIcons.venus,
                         label: 'FEMALE',
                       ),
@@ -237,9 +238,16 @@ class HomePageState extends State<HomePage> {
             BottomWidget(
                 buttoTitle: 'CALCULATE',
                 onTap: () {
+                  //initier un nouveau objet 
+                  CalculFunc myCalculator =  CalculFunc(height:height,weight:weight);
+                  
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ResultPage()),
+                    MaterialPageRoute(builder: (context) => 
+                    ResultPage (
+                    corpulenceResult:  myCalculator.calculateCorp(),
+                    resultText:  myCalculator.getResult(),
+                    interpretation: myCalculator.getInterpretation(),)),
                   );
                 }),
           ]),
@@ -248,7 +256,11 @@ class HomePageState extends State<HomePage> {
 }
 
 class BottomWidget extends StatelessWidget {
-  BottomWidget({required this.onTap, required this.buttoTitle});
+  const BottomWidget({
+      Key? key, 
+    required this.onTap, 
+    required this.buttoTitle})
+    : super(key: key);
 
   final VoidCallback? onTap;
   final String buttoTitle;
@@ -273,4 +285,3 @@ class BottomWidget extends StatelessWidget {
     );
   }
 }
-
