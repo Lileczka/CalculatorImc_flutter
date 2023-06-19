@@ -7,7 +7,7 @@ import '../compo_elements/repeted_card.dart';
 class ResultPage extends StatelessWidget {
   const ResultPage(
       {Key? key,
-   this.corpulenceResult = '',
+  this.corpulenceResult = '',
      this.resultText= '',
     this.interpretation = '',
     })

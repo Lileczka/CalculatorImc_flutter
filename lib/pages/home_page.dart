@@ -2,6 +2,7 @@ import 'package:calcul_flutter/pages/result.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../compo_elements/button_round.dart';
+import '../compo_elements/button_widget.dart';
 import '../compo_elements/icone_content.dart';
 import '../const.dart';
 import '../compo_elements/repeted_card.dart';
@@ -253,35 +254,6 @@ class HomePageState extends State<HomePage> {
           ]),
     );
   }
-}
+} 
 
-class BottomWidget extends StatelessWidget {
-  const BottomWidget({
-      Key? key, 
-    required this.onTap, 
-    required this.buttoTitle})
-    : super(key: key);
 
-  final VoidCallback? onTap;
-  final String buttoTitle;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        child: Center(
-          child: Text(
-            buttoTitle,
-            style: kLargeBottom,
-          ),
-        ),
-        color: kBottomColor,
-        height: kBottomHeight,
-        width: double.infinity,
-        margin: const EdgeInsets.only(top: 10.0),
-        padding: const EdgeInsets.only(bottom: 20.0),
-      ),
-    );
-  }
-}
